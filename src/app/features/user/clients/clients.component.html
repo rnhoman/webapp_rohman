@@ -1,0 +1,258 @@
+<style>
+.text-header {
+  vertical-align: middle;
+  text-align: center;
+}
+</style>
+<div id="content">
+
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['User', 'Client Company']" icon="table" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+    <sa-stats></sa-stats>
+  </div>
+  <!-- widget grid -->
+  <sa-widgets-grid>
+
+    <div class="row">
+      <article class="col-sm-12">
+
+        <div sa-widget [editbutton]="false" color="blueDark">
+          <header>
+            <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+
+            <h2>Client Company</h2>
+          </header>
+          <div>
+            <div class="widget-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" style="text-align: right; margin-top: 8px;">Client Company</label>
+                      <div class="col-md-3">
+                        <select class="form-control" [(ngModel)]="selectedClients" (ngModelChange)="onSubmit()">
+                          <option>-- All Data Client--</option>
+                          <option *ngFor="let item of res_client" [ngValue]="item.name">{{item.name}}</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-primary btn-block"><i class="fa fa-search"></i> Search</button>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-success btn-block" (click)="openModal(templatenew)"><i class="fa fa-plus"></i> New Client</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                      <th class="text-header">No.</th>
+                      <th class="text-header">Company</th>
+                      <th class="text-header">Client Alias</th>
+                      <th class="text-header">Address</th>
+                      <th class="text-header">Phone</th>
+                      <th class="text-header">Contract Date</th>
+                      <th class="text-header">Website</th>
+                      <th class="text-header">Status</th>
+                      <th class="text-header">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let company of clients_array; let i= index">
+                      <td style="text-align: center">{{ i+1}}.</td>
+                      <td>{{ company.company }}</td>
+                      <td>{{ company.client_alias }}</td>
+                      <td>{{ company.address }}</td>
+                      <td style="text-align: center">{{ company.phone }}</td>
+                      <td style="text-align: center">{{ company.contract_date }}</td>
+                      <td style="text-align: center">{{ company.link_null }}</td>
+                      <td style="text-align: center">
+                        <!-- <label class="fa fa-check-square"></label> -->
+                        <label style="font-size: 15px;" [ngClass]="company.active == true ? 'fa fa-check text-success': 'fa fa-times text-danger'"></label>
+                        <!-- {{ company.active }} -->
+                      </td>
+                      <td style="text-align: center">
+                        <button class="btn btn-xs btn-info" (click)="showEditClientForm(company, template)"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-xs btn-default" (click)="removeClients(company.id)"><i class="fa fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </sa-widgets-grid>
+</div>
+
+<ng-template #templatenew>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add Clients Company</h4>
+    <button type="button" class="close pull-right" (click)="closeFirstModal()" aria-label="Close" >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="smart-form" novalidate="novalidate">
+      
+      <fieldset>
+          
+        <section>
+          <label class="label">Company Name</label>
+          <label class="input">
+            <i class="icon-append fa fa-building"></i>
+            <input type="text" name="company" [(ngModel)]="company">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Company (Code) Alias</label>
+          <label class="input">
+            <i class="icon-append fa fa-building"></i>
+            <input type="text" name="company_alias" [(ngModel)]="company_alias">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Official Address</label>
+          <label class="input">
+            <i class="icon-append fa fa-map-marker"></i>
+            <input type="text" name="address" [(ngModel)]="address">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Phone Number</label>
+          <label class="input">
+            <i class="icon-append fa fa-phone"></i>
+            <input type="text" name="phone" [(ngModel)]="phone">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Website</label>
+          <label class="input">
+            <i class="icon-append fa fa-globe"></i>
+            <input type="text" name="website" [(ngModel)]="website">
+          </label>
+        </section>
+        <section>
+          <label class="label">Contract Date</label>
+          <label class="input">
+            <i class="icon-append fa fa-calendar"></i>
+            <input type="text" name="request" placeholder="Request activation on" class="datepicker" data-dateformat="dd/mm/yy">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Status</label>
+          <label class="input">
+            <i class="icon-append fa fa-power-off"></i>
+            <input type="text" name="active" [(ngModel)]="active">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Change Logo</label>
+          <label class="input">
+            <i class="icon-append fa fa-file-image-o"></i>
+            <input type="text" name="company">
+          </label>
+        </section>
+        </fieldset>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="closeFirstModal()">Cancel</button>
+    <button type="button" class="btn btn-success" (click)="updateClients(company)">Save</button>
+  </div>
+</ng-template>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Update Clients Company</h4>
+    <button type="button" class="close pull-right" (click)="closeFirstModal()" aria-label="Close" >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="smart-form" novalidate="novalidate">
+      
+      <fieldset>
+          
+        <section>
+          <label class="label">Company Name</label>
+          <label class="input">
+            <i class="icon-append fa fa-building"></i>
+            <input type="text" name="company" [(ngModel)]="company">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Company (Code) Alias</label>
+          <label class="input">
+            <i class="icon-append fa fa-building"></i>
+            <input type="text" name="company_alias" [(ngModel)]="company_alias">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Official Address</label>
+          <label class="input">
+            <i class="icon-append fa fa-map-marker"></i>
+            <input type="text" name="address" [(ngModel)]="address">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Phone Number</label>
+          <label class="input">
+            <i class="icon-append fa fa-phone"></i>
+            <input type="text" name="phone" [(ngModel)]="phone">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Website</label>
+          <label class="input">
+            <i class="icon-append fa fa-globe"></i>
+            <input type="text" name="website" [(ngModel)]="website">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Contract Date</label>
+          <label class="input">
+            <i class="icon-append fa fa-calendar"></i>
+            <input type="text" name="contract" [(ngModel)]="contract">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Status</label>
+          <label class="input">
+            <i class="icon-append fa fa-power-off"></i>
+            <input type="text" name="active" [(ngModel)]="active">
+          </label>
+        </section>
+
+        <section>
+          <label class="label">Change Logo</label>
+          <label class="input">
+            <i class="icon-append fa fa-file-image-o"></i>
+            <input type="text" name="company">
+          </label>
+        </section>
+        </fieldset>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="closeFirstModal()">Cancel</button>
+    <button type="button" class="btn btn-success" (click)="updateClients(company)">Save</button>
+  </div>
+</ng-template>

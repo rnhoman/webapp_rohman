@@ -1,0 +1,208 @@
+<aside id="left-panel">
+
+  <!-- User info -->
+  <sa-login-info></sa-login-info>
+  <!-- end user info -->
+
+  <nav>
+    <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+    Please note that these links work a bit different than
+    traditional href="" links. See documentation for details.
+    -->
+
+    <ul saSmartMenu>
+      <li routerLinkActive="active">
+        <a routerLink="/dashboard/analytics" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span
+          class="menu-item-parent">{{'Dashboard' | i18n}}</span></a>
+      </li>
+
+      <li class="top-menu-invisible">
+        <a href="#"><i class="fa fa-lg fa-fw fa-cubes"></i> <span class="menu-item-parent">{{'Simulation' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/smartadmin/app-layouts"><i class="fa fa-gear"></i>
+              {{'Simulation WBP/LWBP' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/smartadmin/prebuilt-skins"><i class="fa fa-gear"></i>
+              {{'Simulation kWh' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-book"></i> <span
+          class="menu-item-parent">{{'Internal Report ' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/graphs/flot-charts"><i class="fa fa-percent"></i> {{'Percentage Report' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/graphs/morris-charts"><i class="fa fa-file-text-o"></i> {{'Delta Report' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span
+          class="menu-item-parent">{{'Saving Report' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/normal"><i class="fa fa-area-chart"></i> {{'Day Report' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/datatables"><i class="fa fa-line-chart"></i> {{'Daily Report' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/saving-report/monthly"><i class="fa fa-bar-chart"></i> {{'Monthly Report' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-line-chart"></i> <span
+          class="menu-item-parent">{{'Capacity Report' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/normal"><i class="fa fa-area-chart"></i> {{'Day Report' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/datatables"><i class="fa fa-line-chart"></i> {{'Daily Report' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/ngx-datatable"><i class="fa fa-bar-chart"></i> {{'Monthly Report' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-bolt"></i> <span
+          class="menu-item-parent">{{'Voltage Report' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/normal"><i class="fa fa-area-chart"></i> {{'Day Report' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/datatables"><i class="fa fa-line-chart"></i> {{'Daily Report' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/ngx-datatable"><i class="fa fa-bar-chart"></i> {{'Monthly Report' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa fa-lg fa-fw fa-cogs"></i> <span
+          class="menu-item-parent">{{'Hardware Management' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/hardware/device"><i class="fa fa-tablet"></i> {{'Device' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/hardware/device/create-device"><i class="fa fa-plus-square"></i> {{'Create Device' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/hardware/panel_locations"><i class="fa fa-map-marker"></i> {{'Panel Location' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/ngx-datatable"><i class="fa fa-bars"></i> {{'Create Panel' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/hardware/panel-image"><i class="fa fa-picture-o"></i> {{'Panel Image' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/ngx-datatable"><i class="fa fa-credit-card"></i> {{'Billing Customer' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/tables/ngx-datatable"><i class="fa fa-plus-square"></i> {{'Create Billing' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa fa-lg fa-fw fa-users"></i> <span
+          class="menu-item-parent">{{'User Management' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/user/clients"><i class="fa fa-building-o"></i>
+              {{'Client Company' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/user/create-client"><i class="fa fa-plus-square"></i> 
+              {{'Create Client' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/user/user-groups"><i class="fa fa-users"></i>
+              {{'User Group' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/user/user-account"><i class="fa fa-user"></i>
+              {{'User Account' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/user/create-users"><i class="fa fa-plus-square"></i>
+              {{'Create User' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa fa-lg fa-fw fa-database"></i> <span
+          class="menu-item-parent">{{'Data Management' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/e-commerce/orders" title="Orders"><i class="fa fa-file-o"></i> {{'Data History' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/e-commerce/products-view" title="Products View"><i class="fa fa-file-text-o"></i> {{'Data History Log' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/e-commerce/product-details" title="Products Detail"><i class="fa fa-file-text-o"></i> {{'Last KWHMeter Data' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/e-commerce/product-details" title="Products Detail"><i class="fa fa-th-large"></i> {{'Traffic Data' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/e-commerce/product-details" title="Products Detail"><i class="fa fa-terminal"></i> {{'Parse Tester' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-envelope-o"></i> <span
+          class="menu-item-parent">{{'Mail Management' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/miscellaneous/pricing-tables"><i class="fa fa-cogs"></i> {{'Mail Setting' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/miscellaneous/invoice"><i class="fa fa-user"></i> {{'Mail Recipients' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/auth/login"><i class="fa fa-bell-o"></i> {{'Mail Notification' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#"><i class="fa fa-lg fa-fw fa-object-group"></i> <span
+          class="menu-item-parent">{{'Content Management' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
+            <a routerLink="/miscellaneous/pricing-tables"><i class="fa fa-columns"></i> {{'Landingpage Content' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/miscellaneous/invoice"><i class="fa fa-plus-square"></i> {{'Create Content' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </nav>
+
+  <!-- <sa-minify-menu></sa-minify-menu> -->
+
+</aside>

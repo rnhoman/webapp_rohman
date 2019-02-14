@@ -1,0 +1,92 @@
+<style>
+  img{
+    position: absolute;
+    z-index: 9999999999;
+    display: block;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+</style>
+<!-- <img *ngIf="loading" src="../../../../assets/img/load.gif"/> -->
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#cb1515"
+  type="ball-scale-ripple-multiple">
+ <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<header id="header" class="animated fadeInDown">
+
+  <div id="logo-group">
+    <span id="logo"> <img src="assets/img/logo.png" alt="SmartAdmin"> </span>
+  </div>
+</header>
+<style>
+  .row-login{
+    width: 350px;           /* Set this to your convenience */
+    height: 200px;          /* Set this to your convenience */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 100px;     /* Half of height */
+    margin-left: -175px;
+  }
+</style>
+<div id="main" role="main" class="animated fadeInDown">
+
+  <div id="content" class="container">
+    <div class="row-login">
+      <div class="col-xs-12">
+        <div class="well no-padding">
+          <form  class="smart-form client-form">
+            <header>
+              Sign In
+            </header>
+            <fieldset>
+              <section>
+                <label class="label">E-mail</label>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <input type="email" formControlName="username" class="form-control" >
+                  <div  class="invalid-feedback">
+                    <div ><p style="color:brown"><i class="fa fa-warning"></i> Username is required</p></div>
+                  </div>
+                  <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
+                    Please enter email address</b>
+                  </label>
+              </section>
+              <section>
+                <label class="label">Password</label>
+                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <input type="password" formControlName="password" class="form-control">
+                  <div  class="invalid-feedback">
+                    <div ><p style="color:brown"><i class="fa fa-warning"></i> Password is required</p></div>
+                  </div>
+                  </label>
+
+                <div class="note">
+                  <a routerLink="/auth/forgot-password">Forgot password?</a>
+                </div>
+              </section>
+              <section>
+                <label class="checkbox">
+                  <input type="checkbox" name="remember" checked>
+                  <i></i>Stay signed in</label>
+              </section>
+            </fieldset>
+            <footer>
+              <button class="btn btn-primary">
+                Sign in
+              </button>
+            </footer>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
