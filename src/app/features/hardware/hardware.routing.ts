@@ -15,9 +15,24 @@ export const routes:Routes = [
     data: {pageTitle: 'Panel Locations'}
   },
   {
+    path: 'create-panels',
+    loadChildren: './create-panels/create-panels.module#CreatePanelsModule',
+    data: {pageTitle: 'Create Panels'}
+  },
+  {
     path: 'panel-image',
     loadChildren: './panel-image/panel-image.module#PanelImageModule',
     data: {pageTitle: 'Panel Images'}
+  },
+  {
+    path: 'billing-customers',
+    loadChildren: './billing-customers/billing-customers.module#BillingCustomersModule',
+    data: {pageTitle: 'Billing Customers'}
+  },
+  {
+    path: 'create-billing',
+    loadChildren: './create-billing/create-billing.module#CreateBillingModule',
+    data: {pageTitle: 'Create Billing'}
   }
 ];
 

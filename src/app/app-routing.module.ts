@@ -91,6 +91,11 @@ const routes: Routes = [
         data: { pageTitle: "User" }
       },
       {
+        path: "data",
+        loadChildren: "./features/data/data.module#DataModule",
+        data: { pageTitle: "Data" }
+      },
+      {
         path: "saving-report",
         loadChildren: "./features/saving-report/saving-report.module#SavingReportModule",
         data: { pageTitle: "Saving Report" }

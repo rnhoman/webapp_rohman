@@ -106,16 +106,16 @@
             <a routerLink="/hardware/panel_locations"><i class="fa fa-map-marker"></i> {{'Panel Location' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/tables/ngx-datatable"><i class="fa fa-bars"></i> {{'Create Panel' | i18n}}</a>
+            <a routerLink="/hardware/create-panels"><i class="fa fa-bars"></i> {{'Create Panel' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
             <a routerLink="/hardware/panel-image"><i class="fa fa-picture-o"></i> {{'Panel Image' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/tables/ngx-datatable"><i class="fa fa-credit-card"></i> {{'Billing Customer' | i18n}}</a>
+            <a routerLink="/hardware/billing-customers"><i class="fa fa-credit-card"></i> {{'Billing Customer' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/tables/ngx-datatable"><i class="fa fa-plus-square"></i> {{'Create Billing' | i18n}}</a>
+            <a routerLink="/hardware/create-billing"><i class="fa fa-plus-square"></i> {{'Create Billing' | i18n}}</a>
           </li>
         </ul>
       </li>
@@ -154,6 +154,28 @@
           class="menu-item-parent">{{'Data Management' | i18n}}</span></a>
         <ul>
           <li routerLinkActive="active">
+            <a routerLink="/data/history" title="Orders"><i class="fa fa-file-o"></i> {{'Data History' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/data/history_log" title="Products View"><i class="fa fa-file-text-o"></i> {{'Data History Log' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/data/data_kwhmeter" title="Products Detail"><i class="fa fa-file-text-o"></i> {{'Last KWHMeter Data' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/data/traffic" title="Products Detail"><i class="fa fa-th-large"></i> {{'Traffic Data' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/data/parse_tester" title="Products Detail"><i class="fa fa-terminal"></i> {{'Parse Tester' | i18n}}</a>
+          </li>
+        </ul>
+      </li>
+      <!-- <li>
+        <a href="#">
+          <i class="fa fa-lg fa-fw fa-database"></i> <span
+          class="menu-item-parent">{{'Data Management' | i18n}}</span></a>
+        <ul>
+          <li routerLinkActive="active">
             <a routerLink="/e-commerce/orders" title="Orders"><i class="fa fa-file-o"></i> {{'Data History' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
@@ -169,7 +191,7 @@
             <a routerLink="/e-commerce/product-details" title="Products Detail"><i class="fa fa-terminal"></i> {{'Parse Tester' | i18n}}</a>
           </li>
         </ul>
-      </li>
+      </li> -->
 
       <li>
         <a href="#"><i class="fa fa-lg fa-fw fa-envelope-o"></i> <span
