@@ -1,7 +1,7 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateUsersComponent } from './create-users.component';
-import { RouterModule } from '@angular/router';
+import { Landingpage_contentComponent } from './landingpage_content.component';
 import { SharedModule } from '@app/shared/shared.module';
 
 @NgModule({
@@ -11,10 +11,10 @@ import { SharedModule } from '@app/shared/shared.module';
     RouterModule.forChild([
       {
         path: '',
-        component: CreateUsersComponent
+        component: Landingpage_contentComponent
       }
     ])
   ],
-  declarations: [CreateUsersComponent]
+  declarations: [Landingpage_contentComponent]
 })
-export class CreateUsersModule { }
+export class Landingpage_contentModule { }

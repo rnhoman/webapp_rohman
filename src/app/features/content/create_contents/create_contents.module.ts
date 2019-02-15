@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateUsersComponent } from './create-users.component';
-import { RouterModule } from '@angular/router';
+import { Create_contentsComponent } from './create_contents.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -11,10 +11,10 @@ import { SharedModule } from '@app/shared/shared.module';
     RouterModule.forChild([
       {
         path: '',
-        component: CreateUsersComponent
+        component: Create_contentsComponent
       }
     ])
   ],
-  declarations: [CreateUsersComponent]
+  declarations: [Create_contentsComponent]
 })
-export class CreateUsersModule { }
+export class Create_contentsModule { }

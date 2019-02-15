@@ -96,6 +96,16 @@ const routes: Routes = [
         data: { pageTitle: "Data" }
       },
       {
+        path: "mail",
+        loadChildren: "./features/mail/mail.module#MailModule",
+        data: { pageTitle: "Data" }
+      },
+      {
+        path: "content",
+        loadChildren: "./features/content/content.module#ContentModule",
+        data: { pageTitle: "Content" }
+      },
+      {
         path: "saving-report",
         loadChildren: "./features/saving-report/saving-report.module#SavingReportModule",
         data: { pageTitle: "Saving Report" }

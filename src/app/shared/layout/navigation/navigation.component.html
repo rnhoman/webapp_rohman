@@ -197,7 +197,16 @@
         <a href="#"><i class="fa fa-lg fa-fw fa-envelope-o"></i> <span
           class="menu-item-parent">{{'Mail Management' | i18n}}</span></a>
         <ul>
-          <li routerLinkActive="active">
+            <li routerLinkActive="active">
+              <a routerLink="/mail/mail_settings"><i class="fa fa-cogs"></i> {{'Mail Setting' | i18n}}</a>
+            </li>
+            <li routerLinkActive="active">
+              <a routerLink="/mail/mail_recipients"><i class="fa fa-user"></i> {{'Mail Recipients' | i18n}}</a>
+            </li>
+            <li routerLinkActive="active">
+              <a routerLink="/mail/mail_notification"><i class="fa fa-bell-o"></i> {{'Mail Notification' | i18n}}</a>
+            </li>
+          <!-- <li routerLinkActive="active">
             <a routerLink="/miscellaneous/pricing-tables"><i class="fa fa-cogs"></i> {{'Mail Setting' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
@@ -205,7 +214,7 @@
           </li>
           <li routerLinkActive="active">
             <a routerLink="/auth/login"><i class="fa fa-bell-o"></i> {{'Mail Notification' | i18n}}</a>
-          </li>
+          </li> -->
         </ul>
       </li>
 
@@ -214,11 +223,17 @@
           class="menu-item-parent">{{'Content Management' | i18n}}</span></a>
         <ul>
           <li routerLinkActive="active">
+            <a routerLink="/content/landingpage_content"><i class="fa fa-columns"></i> {{'Landingpage Content' | i18n}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/content/create_contents"><i class="fa fa-plus-square"></i> {{'Create Content' | i18n}}</a>
+          </li>
+          <!-- <li routerLinkActive="active">
             <a routerLink="/miscellaneous/pricing-tables"><i class="fa fa-columns"></i> {{'Landingpage Content' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
             <a routerLink="/miscellaneous/invoice"><i class="fa fa-plus-square"></i> {{'Create Content' | i18n}}</a>
-          </li>
+          </li> -->
         </ul>
       </li>
     </ul>

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateUsersComponent } from './create-users.component';
-import { RouterModule } from '@angular/router';
+import { Mail_settingsComponent } from './mail_settings.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -11,10 +11,10 @@ import { SharedModule } from '@app/shared/shared.module';
     RouterModule.forChild([
       {
         path: '',
-        component: CreateUsersComponent
+        component: Mail_settingsComponent
       }
     ])
   ],
-  declarations: [CreateUsersComponent]
+  declarations: [Mail_settingsComponent]
 })
-export class CreateUsersModule { }
+export class Mail_settingsModule { }
