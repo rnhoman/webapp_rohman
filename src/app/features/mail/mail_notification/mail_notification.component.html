@@ -1,3 +1,37 @@
-<p>
-  mail_notification works!
-</p>
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs [items]="['Mail','Mail Notification']" icon="table" class="col-xs-12 col-sm-7 col-lg-7"></sa-big-breadcrumbs>
+    <sa-stats></sa-stats>
+  </div>
+
+  <sa-widgets-grid>
+
+    <div class="row">
+      <article class="col-sm-12">
+
+        <div sa-widget [editbutton]="false" color="darken">
+          <header><span class="widget-icon"> <i class="fa fa-table"></i> </span>
+            <h2>Standard
+              Data Tables</h2></header>
+          <div>
+            <div class="widget-body no-padding">
+              <sa-datatable paginationLength="true" tableClass="table table-striped table-bordered table-hover" width="100%">
+                <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Sending Date</th>
+                  <th>Subject</th>
+                  <th>Mail From</th>
+                  <th>Mail To</th>
+                  <th>Status</th>
+                  <th>Detail</th>
+                </tr>
+                </thead>
+              </sa-datatable>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </sa-widgets-grid>
+</div>
