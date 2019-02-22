@@ -141,13 +141,22 @@
             <input type="email" name="website" [(ngModel)]="website">
           </label>
         </section>
-        <section>
-          <label class="label">Contract Date</label>
-          <label class="input">
-            <i class="icon-append fa fa-calendar"></i>
-            <input type="text" name="contract" placeholder="Request activation on" class="daterangepicker" data-dateformat="dd/mm/yy" [(ngModel)]="contract">
-          </label>
-        </section>
+        <div class="row">
+          <section class="col col-6">
+            <label for="name">Contract Date</label>
+            <label class="input">
+              <i class="icon-append fa fa-calendar"></i>
+              <input type="text" name="contract_date" [(ngModel)]="contract_date" id="startdate" [saUiDatepicker]="{minRestrict:'#finishdate'}" placeholder="Expected start date" />
+            </label>
+          </section>
+          <section class="col col-6">
+              <label for="name"></label>
+            <label class="input">
+              <i class="icon-append fa fa-calendar"></i>
+              <input type="text" name="contract_date" [(ngModel)]="contract_date" id="finishdate" [saUiDatepicker]="{maxRestrict:'#startdate'}" placeholder="Expected finish date"/>
+            </label>
+          </section>
+        </div>
 
         <section>
           <label class="label">Status</label>

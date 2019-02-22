@@ -10,6 +10,7 @@ import { CreateDeviceComponent } from './createDevice/createDevice.component'
 // import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { SmartadminInputModule } from '@app/shared/forms/input/smartadmin-input.module';
+import { NgDatepickerModule } from 'ng2-datepicker';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SmartadminInputModule } from '@app/shared/forms/input/smartadmin-input.
         component: CreateDeviceComponent
       }
   ]),
-  SmartadminInputModule
+  SmartadminInputModule,
+  NgDatepickerModule
   // BsDatepickerModule.forRoot()
   ],
   declarations: [
