@@ -29,11 +29,11 @@ export const routes:Routes = [
     loadChildren: './billing-customers/billing-customers.module#BillingCustomersModule',
     data: {pageTitle: 'Billing Customers'}
   },
-  {
-    path: 'create-billing',
-    loadChildren: './create-billing/create-billing.module#CreateBillingModule',
-    data: {pageTitle: 'Create Billing'}
-  }
+  // {
+  //   path: 'create-billing',
+  //   loadChildren: './create-billing/create-billing.module#CreateBillingModule',
+  //   data: {pageTitle: 'Create Billing'}
+  // }
 ];
 
 

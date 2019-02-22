@@ -1,3 +1,102 @@
-<p>
-  billing-customers works!
-</p>
+<style>
+  .text-header {
+    vertical-align: middle;
+    text-align: center;
+  }
+  </style>
+  <div id="content">
+  
+    <div class="row">
+      <sa-big-breadcrumbs [items]="['Hardware', 'Billing Customer']" icon="table" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+      <sa-stats></sa-stats>
+    </div>
+    <!-- widget grid -->
+    <sa-widgets-grid>
+  
+      <div class="row">
+        <article class="col-sm-12">
+  
+          <div sa-widget [editbutton]="false" color="blueDark">
+            <header>
+              <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+  
+              <h2>Billing Customer</h2>
+            </header>
+            <div>
+              <div class="widget-body">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-12">
+                      <div class="form-group">
+                        <label class="control-label col-sm-2" style="text-align: right; margin-top: 5px;"><b>Client Company</b></label>
+                        <div class="col-md-3">
+                          <select class="form-control" [(ngModel)]="selectedClients" (ngModelChange)="onSubmit()">
+                            <option>-- All Client Company--</option>
+                            <!-- <option *ngFor="let item of res_company" [ngValue]="item.name">{{ item.name }}</option> -->
+                          </select>
+                        </div>
+                        <!-- <label class="control-label col-sm-1" style="text-align: right; margin-top: 8px;">Device ID</label>
+                        <div class="col-md-3">
+                          <input type="text" class="form-control" [(ngModel)]="searchText" (ngModelChange)="getAllClients()">
+                        </div> -->
+                        <div class="col-xs-12 col-md-2">
+                          <button class="col-sm-6 btn btn-primary btn-block" (click)="onSubmit()"><i class="fa fa-search"></i> Search</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                    <tr>
+                      <th rowspan=2 class="text-header">No.</th>
+                      <th rowspan=2 class="text-header">Company</th>
+                      <th colspan=4 class="text-header">Billing</th>
+                      <th colspan=4 class="text-header">Panel Location</th>
+                      <!-- <th rowspan=2 class="text-header">Billing</th>
+                      <th rowspan=2 class="text-header">Action</th> -->
+                    </tr>
+                    <tr>
+                      <th class="text-header">Billing Name</th>
+                      <th class="text-header">Customer ID</th>
+                      <th class="text-header">Edit | Del</th>
+                      <th class="text-header">Detail</th>
+                      <th class="text-header">Panel Name</th>
+                      <th class="text-header">Device</th>
+                      <th class="text-header">Capacity</th>
+                      <th class="text-header">Installation Date</th>
+                    </tr>
+                    </thead>
+                    <!-- <tbody *ngFor="let item of result; let i = index">
+                    <tr>
+                      <td [attr.rowspan]="item.name.length" style="text-align: center">{{ i+1 }}</td>
+                      <td [attr.rowspan]="item.name.length" style="border-right: 1px solid #ccc;">{{ item.name }}</td>
+                    </tr>
+                    <tr *ngFor="let value of item.values" style="border-bottom: 1px solid #ccc;">
+                      <td>{{ value.device_identity_id }}
+                        <label style="font-size: 12px;" [ngClass]="value.in_out === 'out' ? 'label label-danger pull-right': 'label label-success pull-right'">
+                          {{ value.in_outLabel }}
+                        </label>
+                      </td>
+                      <td style="text-align: center">
+                        <label style="font-size: 20px;" [ngClass]="value.status === '1' ? 'fa fa-check-square text-success': 'fa fa-check-square text-danger'"></label>
+                      </td>
+                      <td style="text-align: center">{{ value.cat.category }}</td>
+                      <td>{{ value.panel.zona.zona_name }}</td>
+                      <td style="text-align: center">{{ value.client.billing_customers[0].billing_name }}</td>
+                      <td style="text-align: center">
+                        <button class="btn btn-xs btn-info"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-xs btn-default"><i class="fa fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    </tbody> -->
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </sa-widgets-grid>
+  </div>
+  
