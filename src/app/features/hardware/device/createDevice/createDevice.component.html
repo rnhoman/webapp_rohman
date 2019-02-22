@@ -145,7 +145,7 @@
 
               <div class="row">
                   <section class="col col-6">
-                      <label for="name">Contract Date</label>
+                    <label for="name">Contract Date</label>
                     <label class="input">
                       <i class="icon-append fa fa-calendar"></i>
                       <input type="text" name="contract_date" [(ngModel)]="contract_date" id="startdate" [saUiDatepicker]="{minRestrict:'#finishdate'}" placeholder="Expected start date" />
@@ -165,7 +165,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" (click)="closeFirstModal()">Cancel</button>
-        <button type="button" class="btn btn-success" *ngIf="!client.id" (click)="createClient(company);">Create</button>
+        <button type="button" class="btn btn-success" *ngIf="!client.id" (click)="testCreate();">Create</button>
+        <!-- <button type="button" class="btn btn-success" *ngIf="!client.id" (click)="createClient(company);">Create</button> -->
       </div>
   </ng-template>
 

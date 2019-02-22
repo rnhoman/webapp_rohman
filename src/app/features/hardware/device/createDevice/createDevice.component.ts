@@ -64,8 +64,6 @@ export class CreateDeviceComponent implements OnInit {
       })
       .subscribe(({ data }) => {
         console.log(data);
-        console.log(this.company)
-        console.log(this.address)
         this.closeFirstModal();
         this.getClients();
         Swal(
@@ -82,9 +80,13 @@ export class CreateDeviceComponent implements OnInit {
       });
   }
 
-  // onDateChange(newDate: Date){
-  //   console.log(newDate);
-  // }
+  testCreate(){
+    console.log(this.company)
+    console.log(this.address)
+    console.log(this.phone)
+    console.log(this.contract_date)
+
+  }
   getClients() {
     this.apollo.watchQuery({
       query: queryClients,

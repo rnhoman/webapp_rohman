@@ -32,6 +32,7 @@ export class ClientsComponent implements OnInit {
   website: any;
   contract: any;
   active: boolean;
+  logo: any;
 
   subscriptions: Subscription[] = [];
 
@@ -73,20 +74,21 @@ export class ClientsComponent implements OnInit {
     console.log(this.contract)
     console.log(this.website)
     console.log(this.active)
+    console.log(this.logo)
   }
 
-  createClient(client) {
+  createClient() {
     this.apollo
       .mutate({
         mutation: createClient,
         variables: {
-          company: client.company,
-          client_alias: client.company_alias,
-          address: client.address,
-          phone: client.phone,
-          contract_date: client.contract,
-          link_site: client.website,
-          active: client.active
+          company: this.company,
+          client_alias: this.company_alias,
+          address: this.address,
+          phone: this.phone,
+          contract_date: this.contract,
+          link_site: this.website,
+          active: this.active
         },
         update: (proxy, { data: { createClient } }) => {
           const data: any = proxy.readQuery({ query: createClient.client_array });

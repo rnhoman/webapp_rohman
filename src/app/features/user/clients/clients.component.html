@@ -119,9 +119,10 @@
 
         <section>
           <label class="label">Official Address</label>
-          <label class="input">
-            <i class="icon-append fa fa-map-marker"></i>
-            <input type="text" name="address" [(ngModel)]="address">
+          <label class="textarea">
+            <!-- <i class="icon-append fa fa-map-marker"></i> -->
+            <textarea name="address" id="" cols="3" [(ngModel)]="address"></textarea>
+            <!-- <input type="text" name="address" [(ngModel)]="address"> -->
           </label>
         </section>
 
@@ -129,7 +130,7 @@
           <label class="label">Phone Number</label>
           <label class="input">
             <i class="icon-append fa fa-phone"></i>
-            <input type="text" name="phone" [(ngModel)]="phone">
+            <input type="number" name="phone" [(ngModel)]="phone">
           </label>
         </section>
 
@@ -137,7 +138,7 @@
           <label class="label">Website</label>
           <label class="input">
             <i class="icon-append fa fa-globe"></i>
-            <input type="text" name="website" [(ngModel)]="website">
+            <input type="email" name="website" [(ngModel)]="website">
           </label>
         </section>
         <section>
@@ -150,17 +151,21 @@
 
         <section>
           <label class="label">Status</label>
-          <label class="input">
-            <i class="icon-append fa fa-power-off"></i>
-            <input type="text" name="active" [(ngModel)]="active">
-          </label>
+          <div class="inline-group">
+            <label class="radio">
+              <input type="radio" name="active" checked="checked" value="active" [(ngModel)]="active">
+              Active<i></i>
+            </label>
+            <label class="radio">
+              <input type="radio" name="active" value="nonactive" [(ngModel)]="active">
+              <i></i>NonActive</label>
+          </div>
         </section>
 
         <section>
           <label class="label">Change Logo</label>
-          <label class="input">
-            <i class="icon-append fa fa-file-image-o"></i>
-            <input type="text" name="company">
+          <label class="input input-file">
+            <span class="button"><input type="file" #file (change)="viewport.value = file.value"/>Browse</span><input #viewport type="text" name="logo" placeholder="Include some images" [(ngModel)]="logo" readonly/>
           </label>
         </section>
         </fieldset>
@@ -169,7 +174,7 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-default" (click)="closeFirstModal()">Cancel</button>
     <button type="button" class="btn btn-success" (click)="testCreate()">Save</button>
-    <!-- <button type="button" class="btn btn-success" (click)="createClient(client)">Save</button> -->
+    <!-- <button type="button" class="btn btn-success" (click)="createClient()">Save</button> -->
   </div>
 </ng-template>
 
@@ -244,9 +249,8 @@
 
         <section>
           <label class="label">Change Logo</label>
-          <label class="input">
-            <i class="icon-append fa fa-file-image-o"></i>
-            <input type="text" name="company">
+          <label class="input input-file">
+            <span class="button"><input type="file" #file (change)="viewport.value = file.value"/>Browse</span><input #viewport type="text" name="logo" placeholder="Include some images" [(ngModel)]="logo" readonly/>
           </label>
         </section>
         </fieldset>
