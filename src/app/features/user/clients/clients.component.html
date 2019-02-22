@@ -144,7 +144,7 @@
           <label class="label">Contract Date</label>
           <label class="input">
             <i class="icon-append fa fa-calendar"></i>
-            <input type="text" name="request" placeholder="Request activation on" class="datepicker" data-dateformat="dd/mm/yy">
+            <input type="text" name="contract" placeholder="Request activation on" class="daterangepicker" data-dateformat="dd/mm/yy" [(ngModel)]="contract">
           </label>
         </section>
 
@@ -168,7 +168,8 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-default" (click)="closeFirstModal()">Cancel</button>
-    <button type="button" class="btn btn-success" (click)="updateClients(company)">Save</button>
+    <button type="button" class="btn btn-success" (click)="testCreate()">Save</button>
+    <!-- <button type="button" class="btn btn-success" (click)="createClient(client)">Save</button> -->
   </div>
 </ng-template>
 

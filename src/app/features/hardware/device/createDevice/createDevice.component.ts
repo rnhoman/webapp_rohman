@@ -47,7 +47,7 @@ export class CreateDeviceComponent implements OnInit {
   }
 
   createClient(value) {
-    this.apollo
+    return this.apollo
       .mutate({
         mutation: createClient,
         variables: {
@@ -63,6 +63,9 @@ export class CreateDeviceComponent implements OnInit {
         }
       })
       .subscribe(({ data }) => {
+        console.log(data);
+        console.log(this.company)
+        console.log(this.address)
         this.closeFirstModal();
         this.getClients();
         Swal(

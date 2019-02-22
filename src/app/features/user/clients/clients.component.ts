@@ -64,18 +64,29 @@ export class ClientsComponent implements OnInit {
     })
   }
 
-  createClient(value) {
+  testCreate(value){
+    console.log(value)
+    console.log(this.company)
+    console.log(this.company_alias)
+    console.log(this.address)
+    console.log(this.phone)
+    console.log(this.contract)
+    console.log(this.website)
+    console.log(this.active)
+  }
+
+  createClient(client) {
     this.apollo
       .mutate({
         mutation: createClient,
         variables: {
-          company: value,
-          client_alias: value,
-          address: value,
-          phone: value,
-          contract_date: value,
-          link_site: value,
-          active: value
+          company: client.company,
+          client_alias: client.company_alias,
+          address: client.address,
+          phone: client.phone,
+          contract_date: client.contract,
+          link_site: client.website,
+          active: client.active
         },
         update: (proxy, { data: { createClient } }) => {
           const data: any = proxy.readQuery({ query: createClient.client_array });
@@ -84,6 +95,7 @@ export class ClientsComponent implements OnInit {
         }
       })
       .subscribe(({ data }) => {
+        console.log(data)
         this.closeFirstModal();
         this.getAllCompany();
         Swal(
