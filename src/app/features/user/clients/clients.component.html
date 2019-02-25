@@ -141,7 +141,7 @@
             <input type="email" name="website" [(ngModel)]="website">
           </label>
         </section>
-        <div class="row">
+        <!-- <div class="row">
           <section class="col col-6">
             <label for="name">Contract Date</label>
             <label class="input">
@@ -156,7 +156,7 @@
               <input type="text" name="contract_date" [(ngModel)]="contract_date" id="finishdate" [saUiDatepicker]="{maxRestrict:'#startdate'}" placeholder="Expected finish date"/>
             </label>
           </section>
-        </div>
+        </div> -->
 
         <section>
           <label class="label">Status</label>
@@ -174,7 +174,13 @@
         <section>
           <label class="label">Change Logo</label>
           <label class="input input-file">
-            <span class="button"><input type="file" #file (change)="viewport.value = file.value"/>Browse</span><input #viewport type="text" name="logo" placeholder="Include some images" [(ngModel)]="logo" readonly/>
+            <span class="button">
+              <input type="file" name="logo" #file (change)="onFile($event); viewport.value = file.value">
+              Browse
+            </span>
+            <input type="text" #viewport placeholder="Include some images" readonly>
+            <!-- <input type="file" name="logo" id="" (change)="onFile($event)"> -->
+            <!-- <span class="button"><input type="file" #file (change)="viewport.value = file.value"/>Browse</span><input #viewport type="text" name="logo" placeholder="Include some images" [(ngModel)]="logo" readonly/> -->
           </label>
         </section>
         </fieldset>

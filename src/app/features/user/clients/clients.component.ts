@@ -65,16 +65,25 @@ export class ClientsComponent implements OnInit {
     })
   }
 
-  testCreate(value){
-    console.log(value)
+  testCreate(){
+    // console.log(value)
     console.log(this.company)
     console.log(this.company_alias)
     console.log(this.address)
     console.log(this.phone)
-    console.log(this.contract)
+    // console.log(this.contract)
     console.log(this.website)
     console.log(this.active)
     console.log(this.logo)
+  }
+
+  onFile(event){
+    var FileList : {
+      new() : FileList;
+    }
+    //get files pada lokasi gambar/files
+    const files: FileList = event.target.files[0];
+    console.log(files)
   }
 
   createClient() {
